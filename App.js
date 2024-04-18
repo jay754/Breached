@@ -33,7 +33,7 @@ const App = () => {
         setHasNoResults(true);
         setTimeout(() => {
           setHasNoResults(false); // Hide the message after 3000 milliseconds (3 seconds)
-        }, 3000);
+        }, 5000);
         return;
       }
 
@@ -51,7 +51,7 @@ const App = () => {
         setHasNoResults(true);
         setTimeout(() => {
           setHasNoResults(false); // Hide the message after 3000 milliseconds (3 seconds)
-        }, 3000);
+        }, 5000);
       }
     } catch (err) {
       setError('Error searching the email');
