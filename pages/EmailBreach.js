@@ -7,7 +7,7 @@ import {
   StyleSheet 
 } from 'react-native';
 
-const EmailBreach = () => {
+const App = () => {
   const [email, setEmail] = useState('');
   const [breaches, setBreaches] = useState([]);
   const [error, setError] = useState('');
@@ -24,7 +24,7 @@ const EmailBreach = () => {
       const response = await fetch(`https://haveibeenpwned.com/api/v3/breachedaccount/${email}`, {
         method: 'GET',
         headers: {
-          'hibp-api-key': ''
+          'hibp-api-key': '854b34914fe1469e90ee0f0f7300c4af'
         }
       });
 
@@ -146,4 +146,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default EmailBreach;
+export default App;
