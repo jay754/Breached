@@ -14,6 +14,7 @@ import {
 
 import EmailBreach from "./pages/EmailBreach.js";
 import LatestBreach from "./pages/LatestBreach.js"
+import BreachInfo from "./pages/BreachInfo.js"
 
 const Tab = createBottomTabNavigator();
 
@@ -41,6 +42,16 @@ const App = () => {
         component={LatestBreach}
         options={{
           tabBarLabel: 'LatestBreach',
+          tabBarIcon: ({ color, size }) => (
+            <MaterialCommunityIcons name="arrow-down-drop-circle" color={color} size={size} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="BreachInfo"
+        component={BreachInfo}
+        options={{
+          tabBarLabel: 'Breach Info',
           tabBarIcon: ({ color, size }) => (
             <MaterialCommunityIcons name="arrow-down-drop-circle" color={color} size={size} />
           ),

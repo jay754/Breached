@@ -65,6 +65,8 @@ const App = () => {
       <View style={styles.mini_container}> 
         <Text style={styles.header}> Breached? </Text>
 
+        <Text style={styles.header_sku}> Check if your email address is in a data breach </Text>
+
         <TextInput
           style={styles.input}
           onChangeText={setEmail}
@@ -123,7 +125,7 @@ const styles = StyleSheet.create({
     width: '100%',
   },
   header: {
-    fontSize: 40,
+    fontSize: 60,
     marginTop: 20,
   },
   warning: {
