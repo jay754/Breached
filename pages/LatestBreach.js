@@ -75,7 +75,7 @@ const styles = StyleSheet.create({
     shadowRadius: 16.00,
     elevation: 24,
     backgroundColor: 'white',
-    padding: 20
+    padding: 22
   },
   header: {
     fontSize: 40

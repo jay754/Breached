@@ -20,6 +20,11 @@ const App = () => {
     setHasNoResults(false);
     setBreaches([]);
 
+    if (!email.trim()) {
+        alert('Please enter a valid breach email.');
+        return;
+    }
+
     try {
       const response = await fetch(`https://haveibeenpwned.com/api/v3/breachedaccount/${email}`, {
         method: 'GET',
@@ -115,6 +120,7 @@ const styles = StyleSheet.create({
     shadowRadius: 16.00,
     elevation: 24,
     backgroundColor: 'white',
+    padding: 20
   },
   input: {
     height: 40,

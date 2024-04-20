@@ -38,20 +38,20 @@ const App = () => {
         }}
       />
       <Tab.Screen
-        name="LatestBreach"
-        component={LatestBreach}
+        name="BreachInfo"
+        component={BreachInfo}
         options={{
-          tabBarLabel: 'LatestBreach',
+          tabBarLabel: 'Breach Info',
           tabBarIcon: ({ color, size }) => (
             <MaterialCommunityIcons name="arrow-down-drop-circle" color={color} size={size} />
           ),
         }}
       />
       <Tab.Screen
-        name="BreachInfo"
-        component={BreachInfo}
+        name="LatestBreach"
+        component={LatestBreach}
         options={{
-          tabBarLabel: 'Breach Info',
+          tabBarLabel: 'LatestBreach',
           tabBarIcon: ({ color, size }) => (
             <MaterialCommunityIcons name="arrow-down-drop-circle" color={color} size={size} />
           ),
