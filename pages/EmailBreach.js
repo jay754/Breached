@@ -29,7 +29,7 @@ const App = () => {
       const response = await fetch(`https://haveibeenpwned.com/api/v3/breachedaccount/${email}`, {
         method: 'GET',
         headers: {
-          'hibp-api-key': '854b34914fe1469e90ee0f0f7300c4af'
+          'hibp-api-key': ''
         }
       });
 

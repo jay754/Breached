@@ -27,7 +27,7 @@ const BreachInfo = () => {
             const response = await fetch(`https://haveibeenpwned.com/api/v3/breach/${encodeURIComponent(breachName.trim())}`, {
                 method: 'GET',
                 headers: {
-                    'hibp-api-key': '854b34914fe1469e90ee0f0f7300c4af',
+                    'hibp-api-key': '',
                 }
             });
             if (!response.ok) {
