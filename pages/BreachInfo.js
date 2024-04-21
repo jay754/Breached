@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { 
   View, 
-  TextInput, 
+  TextInput,
   Button, 
   Text, 
-  StyleSheet,
-  ActivityIndicator,
-  ScrollView
+  StyleSheet, 
+  ActivityIndicator, 
+  ScrollView 
 } from 'react-native';
 
 const BreachInfo = () => {
@@ -21,22 +21,20 @@ const BreachInfo = () => {
             return;
         }
         setLoading(true);
-        setData(null);
         setError(null);
+        setData(null);
         try {
-            const response = await fetch(`https://haveibeenpwned.com/api/v3/breach/${encodeURIComponent(breachName.trim())}`, {
+            const url = `https://haveibeenpwned.com/api/v3/breach/${encodeURIComponent(breachName.trim())}`;
+            const response = await fetch(url, {
                 method: 'GET',
                 headers: {
-                    'hibp-api-key': '',
+                    'hibp-api-key': ''
                 }
             });
             if (!response.ok) {
                 throw new Error('Breach not found or error fetching details');
             }
             const json = await response.json();
-            
-            console.log(json)
-
             setData(json);
         } catch (error) {
             setError(error.message);
@@ -45,23 +43,11 @@ const BreachInfo = () => {
         }
     };
 
-    const renderData = () => {
-        if (!data) {
-            return null;
-        }
-        const fields = ["Name", "Domain", "BreachDate", "PwnCount"];
-        return fields.map((field) => (
-            data[field] ? <Text key={field} style={styles.info}>{`${field}: ${data[field]}`}</Text> : null
-        ));
-    };
-
     return (
         <View style={styles.container}>
           <View style={styles.mini_container}> 
+            <Text style={styles.header}> Breach Info </Text>
 
-            <Text style={styles.header}>  
-              Breach Info
-            </Text>
             <TextInput
                 style={styles.input}
                 placeholder="Enter Breach Name (e.g., Adobe)"
@@ -72,8 +58,12 @@ const BreachInfo = () => {
             <Button title="Search" onPress={handleSearch} />
             {loading && <ActivityIndicator size="large" color="#0000ff" />}
             {error && <Text style={styles.error}>{error}</Text>}
-            
-            {renderData()}
+            {data && <View style={styles.dataContainer}>
+                <Text style={styles.info}> Name: {data.Name}</Text>
+                <Text style={styles.info}> Domain Name: {data.Domain}</Text>
+                <Text style={styles.info}> Breach date: {data.BreachDate}</Text>
+                <Text style={styles.info}> Emails leaked: {data.PwnCount}</Text>
+            </View>}
           </View>
         </View>
     );
@@ -112,11 +102,15 @@ const styles = StyleSheet.create({
     width: '100%',
   },
   header: {
-    fontSize: 60,
+    fontSize: 30,
     marginTop: 20,
   },
   info: {
     marginTop: 10
+  },
+  data: {
+    fontSize: 20,
+    padding: 20
   }
 });
 
