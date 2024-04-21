@@ -43,7 +43,7 @@ const App = () => {
         options={{
           tabBarLabel: 'Breach Info',
           tabBarIcon: ({ color, size }) => (
-            <MaterialCommunityIcons name="arrow-down-drop-circle" color={color} size={size} />
+            <MaterialCommunityIcons name="security" color={color} size={size} />
           ),
         }}
       />
@@ -53,7 +53,7 @@ const App = () => {
         options={{
           tabBarLabel: 'LatestBreach',
           tabBarIcon: ({ color, size }) => (
-            <MaterialCommunityIcons name="arrow-down-drop-circle" color={color} size={size} />
+            <MaterialCommunityIcons name="security-network" color={color} size={size} />
           ),
         }}
       />
