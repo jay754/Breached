@@ -79,7 +79,7 @@ const styles = StyleSheet.create({
     padding: 22
   },
   header: {
-    fontSize: 40
+    fontSize: 30
   },
   info: {
     marginTop: 15
